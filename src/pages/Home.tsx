@@ -3,6 +3,9 @@ import { useAuth } from "@/_core/hooks/useAuth";
 import { PriceTable } from "@/components/PriceTable";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
+import { Link } from "wouter";
+import { Eye } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface Product {
   id: number;
@@ -135,13 +138,23 @@ export default function Home() {
     <div className="min-h-screen bg-background font-sans text-foreground selection:bg-primary/10">
       <div className="container max-w-7xl py-12 md:py-20">
         <header className="mb-12 space-y-4">
-          <div className="h-1 w-20 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full mb-6" />
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-primary">
-            Precious Metals Tracker
-          </h1>
-          <p className="text-muted-foreground text-lg max-w-2xl">
-            Ежедневни цени на инвестиционно злато и сребро от водещи дилъри в България
-          </p>
+          <div className="flex items-start justify-between">
+            <div className="space-y-4">
+              <div className="h-1 w-20 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full" />
+              <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-primary">
+                Precious Metals Tracker
+              </h1>
+              <p className="text-muted-foreground text-lg max-w-2xl">
+                Ежедневни цени на инвестиционно злато и сребро от водещи дилъри в България
+              </p>
+            </div>
+            <Link href="/project-viz">
+              <Button variant="outline" className="gap-2">
+                <Eye className="h-4 w-4" />
+                Архитектура
+              </Button>
+            </Link>
+          </div>
         </header>
 
         <main>
